@@ -4,6 +4,7 @@
   --tri1: #a27b5c;
   --tri2: #dcd7c9;
 }
+
 @font-face {
   font-family: "Livingston Demo Sans";
   src: url("./LivingstonDemoSanserif.ttf") format("truetype");
@@ -74,6 +75,7 @@ section.allElems {
   align-items: flex-start;
   color: var(--sec);
   gap: 20px;
+  position: absolute;
 }
 
 .elem {
@@ -85,8 +87,13 @@ section.allElems {
   overflow: hidden;
   position: relative;
   transition: scale 200ms ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
+.elem:hover{
+  box-shadow: 0 5px 20px var(--tri2)
+}
 .elem img {
   width: 100%;
   height: 100%;
@@ -113,4 +120,25 @@ section.allElems {
   padding: 40px;
   font-size: 1rem;
   display: none;
+  position: absolute;
+}
+
+
+.back {
+  position: absolute;
+  right: 5%;
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  font-family: "Livingston Demo Sans", Arial, Helvetica, sans-serif;
+  color: var(--tri2);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.back:active {
+  scale: 0.97
 }

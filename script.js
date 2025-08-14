@@ -31,12 +31,39 @@ let currentTask = [
   {
     task: "Gym Jao",
     details: " 2 Hours Exercise karo",
-    imp: true,
+    imp: false,
   },
 ];
 
+//Rendering the task
+function renderTask() {
+  var sum = "";
+  currentTask.forEach((elem) => {
+    sum += `
+      <div class="task">
+        <h5>${elem.task} <span class = ${elem.imp}>imp</span> </h5>
+        <button type="button">Mark as Complete</button>
+      </div>`;
+  });
+
+  allTask.innerHTML = sum;
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  if (input.value) {
+    currentTask.push({
+      task: input.value,
+      details: taskDetailsInput.value,
+      imp: taskCheckbox.checked,
+    });
+  } else {
+    alert("Please enter some Task");
+  }
 
-  document.querySelector(".allTask");
+  // Resetting the values.
+  input.value = "";
+  taskDetailsInput.value = "";
+  taskCheckbox.checked = false;
+  renderTask();
 });

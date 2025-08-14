@@ -253,6 +253,25 @@ section.allElems {
 .task h5 {
   color: var(--tri2);
   font-size: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.task h5 span{
+  color: var(--tri2);
+  background-color: red;
+  font-size: 15px;
+  border-radius: 50px;
+  padding: 2px 8px;
+  text-align: center;
+}
+
+.task h5 span.true{
+  opacity: 1;
+}
+.task h5 span.false{
+  opacity: 0;
 }
 .task button {
   padding: 10px 20px;
@@ -281,3 +300,4 @@ section.allElems {
   letter-spacing: 2px;
   font-weight: 400;
 }
+

@@ -16,54 +16,51 @@ fullElemPageBackBtn.forEach((back) => {
 
 // Todo Page Events
 
+
 const form = document.querySelector(".addTask form");
 const input = document.querySelector(".addTask form input");
 const taskDetailsInput = document.querySelector(".addTask form textarea");
 const taskCheckbox = document.querySelector(".addTask form #check");
 const allTask = document.querySelector(".allTask");
 
-let currentTask = [
-  {
-    task: "Mandir Jao",
-    details: "Mahadev ke Mandir Jaao",
-    imp: true,
-  },
-  {
-    task: "Gym Jao",
-    details: " 2 Hours Exercise karo",
-    imp: false,
-  },
-];
+// Always start with an array
+let currentTask = JSON.parse(localStorage.getItem("currentTask")) || [];
 
-//Rendering the task
+// Rendering the task
 function renderTask() {
-  var sum = "";
+  let sum = "";
   currentTask.forEach((elem) => {
     sum += `
       <div class="task">
-        <h5>${elem.task} <span class = ${elem.imp}>imp</span> </h5>
+         <h5>${elem.task} <span class=${elem.imp}>imp</span></h5>
         <button type="button">Mark as Complete</button>
       </div>`;
   });
-
   allTask.innerHTML = sum;
 }
 
+// On form submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (input.value) {
+
+  if (input.value.trim()) {
     currentTask.push({
       task: input.value,
       details: taskDetailsInput.value,
       imp: taskCheckbox.checked,
     });
+
+    localStorage.setItem("currentTask", JSON.stringify(currentTask));
+
+    input.value = "";
+    taskDetailsInput.value = "";
+    taskCheckbox.checked = false;
+
+    renderTask();
   } else {
     alert("Please enter some Task");
   }
-
-  // Resetting the values.
-  input.value = "";
-  taskDetailsInput.value = "";
-  taskCheckbox.checked = false;
-  renderTask();
 });
+
+// Show tasks on page load
+renderTask();

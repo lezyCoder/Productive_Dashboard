@@ -14,9 +14,12 @@ fullElemPageBackBtn.forEach((back) => {
   });
 });
 
+
+//Open Features 
+
 // Todo Page Events
-
-
+ function todoList(){
+  
 const form = document.querySelector(".addTask form");
 const input = document.querySelector(".addTask form input");
 const taskDetailsInput = document.querySelector(".addTask form textarea");
@@ -29,14 +32,25 @@ let currentTask = JSON.parse(localStorage.getItem("currentTask")) || [];
 // Rendering the task
 function renderTask() {
   let sum = "";
-  currentTask.forEach((elem) => {
+  currentTask.forEach((elem, idx) => {
     sum += `
       <div class="task">
          <h5>${elem.task} <span class=${elem.imp}>imp</span></h5>
-        <button type="button">Mark as Complete</button>
+        <button type="button" id= ${idx}>Mark as Complete</button>
       </div>`;
   });
   allTask.innerHTML = sum;
+
+  // Marking the task as completed
+
+  let markCompletedButton = document.querySelectorAll(".task button");
+
+  markCompletedButton.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentTask.splice(btn.id, 1);
+      renderTask();
+    });
+  });
 }
 
 // On form submit
@@ -51,7 +65,6 @@ form.addEventListener("submit", (e) => {
     });
 
     localStorage.setItem("currentTask", JSON.stringify(currentTask));
-
     input.value = "";
     taskDetailsInput.value = "";
     taskCheckbox.checked = false;
@@ -64,3 +77,6 @@ form.addEventListener("submit", (e) => {
 
 // Show tasks on page load
 renderTask();
+ }
+
+ todoList();

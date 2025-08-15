@@ -141,11 +141,11 @@ section.allElems {
 .back:active {
   scale: 0.97;
 }
-
+/* 
 .todo-list-fullpage {
   display: block;
   font-family: "Livingston Demo Sans", Arial, Helvetica, sans-serif;
-}
+} */
 
 .todo-list-fullpage h1 {
   font-size: 55px;

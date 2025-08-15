@@ -95,6 +95,7 @@ section.allElems {
 .elem:hover {
   box-shadow: 0 5px 20px var(--tri2);
 }
+
 .elem img {
   width: 100%;
   height: 100%;
@@ -141,6 +142,7 @@ section.allElems {
 .back:active {
   scale: 0.97;
 }
+
 /* 
 .todo-list-fullpage {
   display: block;
@@ -250,6 +252,7 @@ section.allElems {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
 .task h5 {
   color: var(--tri2);
   font-size: 20px;
@@ -270,9 +273,11 @@ section.allElems {
 .task h5 span.true {
   opacity: 1;
 }
+
 .task h5 span.false {
   opacity: 0;
 }
+
 .task button {
   padding: 10px 20px;
   border: none;
@@ -281,9 +286,11 @@ section.allElems {
   border-radius: 5px;
   background-color: var(--tri2);
 }
+
 .task button:active {
   scale: 0.96;
 }
+
 .mark-imp {
   display: flex;
   align-items: center;
@@ -298,7 +305,66 @@ section.allElems {
   transform: scale(1.5);
   cursor: pointer;
 }
+
 .mark-imp label {
   letter-spacing: 2px;
   font-weight: 400;
 }
+
+
+
+/*  daily planner start here  */
+.daily-planner-fullpage{
+  display: block;;
+}
+.daily-planner-fullpage h1 {
+  font-size: 60px;
+}
+
+.daily-planner-fullpage .day-planner {
+  overflow: auto;
+  height: 85%;
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--pri);
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.daily-planner-fullpage .day-planner .day-planner-time {
+  background-color: var(--tri2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  width: 49%;
+  margin-bottom: 15px;
+}
+
+.day-planner .day-planner-time input {
+  width: 100%;
+  padding: 2px 45px;
+  background-color: var(--sec);
+  outline: none;
+  border: none;
+  font-size: 30px;
+  color: var(--tri2);
+  border-radius: 5px;
+  font-weight: 600;
+  padding-top: 30px;
+}
+
+.day-planner .day-planner-time p {
+  position: absolute;
+  top: 5%;
+  left: 0.5%;
+  font-size: 18px;
+  color: var(--tri1);
+}
+
+/* Daily planner end here  */

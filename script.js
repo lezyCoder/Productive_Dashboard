@@ -86,20 +86,29 @@ todoList();
 function dailyPlanner() {
   let dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {};
 
-  var hours = Array.from(
-    { length: 18 },
-    (elem, idx) => `${6 + idx}:00 - ${7 + idx}:00`
-  );
+  var hours = Array.from({ length: 18 }, (elem, idx) => {
+    let startHour = 6 + idx;
+    let endHour = 7 + idx;
+
+    // convert to 12-hour format with AM/PM
+    const formatHour = (h) => {
+      let period = h >= 12 ? "pm" : "am";
+      let hour12 = h % 12 === 0 ? 12 : h % 12;
+      return `${hour12}:00 ${period}`;
+    };
+
+    return `${formatHour(startHour)} - ${formatHour(endHour)}`;
+  });
 
   let wholeDaySum = "";
   hours.forEach((elem, idx) => {
     var savedDataInLocalStorage = dayPlanData[idx] || "";
 
     wholeDaySum += `
-      <div class="day-planner-time">
-        <p>${elem}</p>
-        <input type="text" placeholder="..." id="${idx}" value="${savedDataInLocalStorage}">
-      </div>`;
+    <div class="day-planner-time">
+      <p>${elem}</p>
+      <input type="text" placeholder="..." id="${idx}" value="${savedDataInLocalStorage}">
+    </div>`;
   });
 
   document.querySelector(".day-planner").innerHTML = wholeDaySum;

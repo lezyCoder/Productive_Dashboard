@@ -314,9 +314,10 @@ section.allElems {
 
 
 /*  daily planner start here  */
-.daily-planner-fullpage{
-  display: block;;
-}
+/* .daily-planner-fullpage {
+  display: block;
+} */
+
 .daily-planner-fullpage h1 {
   font-size: 60px;
 }
@@ -368,3 +369,109 @@ section.allElems {
 }
 
 /* Daily planner end here  */
+
+
+/* Motivation page style here  */
+
+.motivational-fullpage {
+  position: relative;
+  /* background-color: var(--sec); */
+}
+
+.motivational-fullpage h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.motivation-fullpage-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.motivational-fullpage .motivation-container {
+  height: 400px;
+  width: 80%;
+  background-color: var(--sec);
+  position: relative;
+  border-radius: 50px;
+}
+
+.motivational-fullpage .motivation-container img {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  opacity: 0.4;
+  height: 50px;
+}
+
+.motivational-fullpage .motivation-container::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  scale: 1.1;
+  background-color: var(--tri2);
+  position: absolute;
+  z-index: 8;
+  filter: blur(40px);
+  border-radius: 50px;
+}
+
+.motivational-fullpage .motivation-container .motivation-wrapper {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pri);
+  border-radius: 40px;
+  padding: 17px;
+  border: 6px solid var(--tri1);
+}
+
+.motivation-1 {
+  padding: 15px;
+  border-radius: 20px;
+  /* background-color: var(--tri2); */
+  color: var(--tri1);
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.motivation-1 h2 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.motivation-2 {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.motivation-2 h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--tri2);
+  letter-spacing: 2.5px;
+}
+
+.motivation-3 {
+  padding: 10px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.motivation-3 h2 {
+  width: fit-content;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--tri1);
+}

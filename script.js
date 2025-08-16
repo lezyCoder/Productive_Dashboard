@@ -121,5 +121,27 @@ function dailyPlanner() {
     });
   });
 }
-
 dailyPlanner();
+
+// Motivation
+
+function motivationalQuoteContent() {
+  async function fetchQuote() {
+    let url = "https://api.quotable.io/random";
+    let quotes = document.querySelector(".motivation-2 h2");
+    let author = document.querySelector(".motivation-3 h2");
+
+    try {
+      let response = await fetch(url);
+      let quotesData = await response.json();
+
+      quotes.innerHTML = quotesData.content;
+      author.innerHTML = `~ ${quotesData.author}`;
+    } catch (err) {
+      console.log("Error", err);
+    }
+  }
+  fetchQuote();
+}
+
+motivationalQuoteContent();

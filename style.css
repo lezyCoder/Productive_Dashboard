@@ -311,8 +311,6 @@ section.allElems {
   font-weight: 400;
 }
 
-
-
 /*  daily planner start here  */
 /* .daily-planner-fullpage {
   display: block;
@@ -369,7 +367,6 @@ section.allElems {
 }
 
 /* Daily planner end here  */
-
 
 /* Motivation page style here  */
 
@@ -474,4 +471,21 @@ section.allElems {
   font-size: 22px;
   font-weight: 600;
   color: var(--tri1);
+}
+
+/* Pomodoro page start here */
+
+.pomodoro-fullpage {
+  display: block;
+
+}
+
+.pomodoro-fullpage h1 {
+  font-size: 50px;
+}
+
+.pomodoro-fullpage .pomodoro-clock-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -145,3 +145,89 @@ function motivationalQuoteContent() {
 }
 
 motivationalQuoteContent();
+
+// Pomodoro Clock
+
+function pomodoroClock() {
+  const startBtn = document.getElementById("start");
+  const resetBtn = document.getElementById("reset");
+  const clock = document.querySelector(".pomodoro-clock h2");
+  const shortBreakBtn = document.getElementById("shortBreak");
+  const longBreakBtn = document.getElementById("longBreak");
+  const pomodoroBtn = document.getElementById("pomodoro");
+  let timer = null;
+  let minutes = 0;
+  let seconds = 0;
+
+  // ✅ Update display helper
+  function updateClock(minute, second) {
+    const m = minute.toString().padStart(2, "0");
+    const s = second.toString().padStart(2, "0");
+    clock.innerHTML = `${m}:${s}`;
+  }
+
+  // ✅ Short break (5 min)
+  function shortBreak() {
+    clearInterval(timer);
+    timer = null;
+    minutes = 5;
+    seconds = 0;
+    updateClock(minutes, seconds);
+  }
+
+  // ✅ Long break (15 min)
+  function longBreak() {
+    clearInterval(timer);
+    timer = null;
+    minutes = 15;
+    seconds = 0;
+    updateClock(minutes, seconds);
+  }
+
+  function pomodoro() {
+    clearInterval(timer);
+    timer = null;
+    minutes = 25;
+    seconds = 0;
+    updateClock(minutes, seconds);
+  }
+  // Attach to buttons
+  shortBreakBtn.addEventListener("click", shortBreak);
+  longBreakBtn.addEventListener("click", longBreak);
+  pomodoroBtn.addEventListener("click", pomodoro);
+  // ✅ Start countdown
+  startBtn.addEventListener("click", () => {
+    if (timer) return; // prevent multiple intervals
+
+    timer = setInterval(() => {
+      if (minutes === 0 && seconds === 0) {
+        clearInterval(timer);
+        timer = null;
+        return;
+      }
+
+      if (seconds === 0) {
+        seconds = 59;
+        minutes--;
+      } else {
+        seconds--;
+      }
+
+      updateClock(minutes, seconds);
+    }, 1000);
+  });
+
+  // ✅ Reset
+  resetBtn.addEventListener("click", () => {
+    clearInterval(timer);
+    timer = null;
+    minutes = 0;
+    seconds = 0;
+    updateClock(minutes, seconds);
+  });
+
+  // Initialize display
+  updateClock(minutes, seconds);
+}
+
+pomodoroClock();

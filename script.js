@@ -127,16 +127,16 @@ dailyPlanner();
 
 function motivationalQuoteContent() {
   async function fetchQuote() {
-    let url = "https://api.quotable.io/random";
+    let url = "https://api.freeapi.app/api/v1/public/quotes/quote/random";
     let quotes = document.querySelector(".motivation-2 h2");
     let author = document.querySelector(".motivation-3 h2");
 
     try {
       let response = await fetch(url);
       let quotesData = await response.json();
-
-      quotes.innerHTML = quotesData.content;
-      author.innerHTML = `~ ${quotesData.author}`;
+      // console.log(quotesData);
+      quotes.innerHTML = quotesData.data.content;
+      author.innerHTML = `~ ${quotesData.data.author}`;
     } catch (err) {
       console.log("Error", err);
     }

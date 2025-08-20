@@ -372,6 +372,7 @@ section.allElems {
 
 .motivational-fullpage {
   position: relative;
+  overflow: hidden;
   /* background-color: var(--sec); */
 }
 

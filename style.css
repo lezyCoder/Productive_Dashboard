@@ -528,3 +528,14 @@ section.allElems {
   font-size: 4.5rem;
   color: var(--tri2);
 }
+
+/* Daily Goals Start Here  */
+
+.dailyGoals-fullpage {
+  display: block;
+}
+
+.dailyGoals-fullpage h1 {
+  font-size: 50px;
+  font-weight: 600;
+}

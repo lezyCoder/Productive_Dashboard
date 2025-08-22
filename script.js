@@ -231,3 +231,15 @@ function pomodoroClock() {
 }
 
 pomodoroClock();
+
+function weatherApiCall() {
+  const WeatherapiKey = "45d4257e89d1e0c2c5467d13424a6a33";
+  const WeatherUrl = "https://api.openweathermap.org/data/2.5/";
+
+  var response = fetch(`${WeatherUrl}/weather?key=${WeatherapiKey}`);
+
+  response.then((result) => console.log("result", result));
+  // console.log(response);
+}
+
+weatherApiCall();

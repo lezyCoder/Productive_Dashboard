@@ -71,12 +71,24 @@ section.allElems {
   padding: 40px;
   padding-top: 80px;
   background-color: var(--tri1);
+  overflow: auto;
+  position: absolute;
+}
+
+.allElems header {
+  height: 300px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  width: 100%;
+  background-color: var(--sec);
+}
+
+section.allElems .allFeatures {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   color: var(--sec);
   gap: 20px;
-  position: absolute;
 }
 
 .elem {

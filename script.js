@@ -234,12 +234,32 @@ pomodoroClock();
 
 function weatherApiCall() {
   const WeatherapiKey = "45d4257e89d1e0c2c5467d13424a6a33";
-  const WeatherUrl = "https://api.openweathermap.org/data/2.5/";
 
-  var response = fetch(`${WeatherUrl}/weather?key=${WeatherapiKey}`);
+  const latitude = 19.160205;
+  const longitude = 72.844485;
 
-  response.then((result) => console.log("result", result));
-  // console.log(response);
+  var response = fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${WeatherapiKey}`
+  );
+
+  let weather = response
+    .then((result) => result.json()) // convert response to JSON
+    .then((data) => {
+      console.log(data);
+      document.querySelector(
+        ".location"
+      ).innerHTML = `${data.name} ${data.sys.country}`;
+      return data.weather;
+    })
+    .then((weather) => {
+      document.querySelector(".weather").innerHTML = `${weather[0].main}`;
+      document.querySelector(
+        ".description"
+      ).innerHTML = `${weather[0].description}`;
+    }) // log the actual data
+    .catch((err) => console.error("Error:", err)); // handle errors
+
+  console.log(weather);
 }
 
 weatherApiCall();

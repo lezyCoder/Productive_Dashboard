@@ -83,6 +83,21 @@ section.allElems {
   background-color: var(--sec);
 }
 
+header .weather-report {
+  padding: 35px;
+  color: var(--tri2);
+}
+header .weather-reporth1 {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+header .weather-report p {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
 section.allElems .allFeatures {
   display: flex;
   flex-wrap: wrap;

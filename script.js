@@ -233,7 +233,7 @@ function pomodoroClock() {
 pomodoroClock();
 
 async function weatherApiCall() {
-  const apiKey = "YOUR API KEY";
+  const apiKey = "5179570c85524c409b1221144252508";
   var city = "Mumbai";
   try {
     let response = await fetch(
@@ -251,11 +251,22 @@ async function weatherApiCall() {
     document.querySelector(".weather").innerText = data.current.condition.text;
 
     // Set the temperature and perciptio humidity
-    document.querySelector(  ".temperature").innerText = `${data.current.temp_c}° C`;
-    document.querySelector(".perciption").innerText = `Perciption :  ${data.current.precip_in}`;
-    document.querySelector(  ".humidity").innerText = `Humidity: ${data.current.humidity}`;
+    document.querySelector(
+      ".temperature"
+    ).innerText = `${data.current.temp_c}° C`;
+    document.querySelector(
+      ".perciption"
+    ).innerText = `Perciption :  ${data.current.precip_in} %`;
+    document.querySelector(
+      ".humidity"
+    ).innerText = `Humidity: ${data.current.humidity} %`;
+    document.querySelector(
+      ".wind"
+    ).innerText = `Wind: ${data.current.wind_kph} km/h`;
+
+    document.querySelector(".time").innerText = data.location.localtime;
   } catch (err) {
     console.log("Error : ", err);
   }
 }
-// weatherApiCall();
+weatherApiCall();

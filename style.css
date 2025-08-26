@@ -81,12 +81,17 @@ section.allElems {
   border-radius: 20px;
   width: 100%;
   background-color: var(--sec);
+  display: flex;
+  color: var(--tri2);
+  justify-content: space-evenly;
+  align-items: flex-end;
 }
 
 header .weather-report {
   padding: 35px;
   color: var(--tri2);
 }
+
 header .weather-report .weather {
   font-size: 45px;
   font-weight: 600;
@@ -97,6 +102,12 @@ header .weather-report p {
   font-size: 12px;
   font-weight: 200;
   letter-spacing: 1px;
+}
+
+header .time {
+  font-size: 40px;
+  font-weight: 400;
+
 }
 
 section.allElems .allFeatures {

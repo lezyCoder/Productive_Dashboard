@@ -87,13 +87,14 @@ header .weather-report {
   padding: 35px;
   color: var(--tri2);
 }
-header .weather-reporth1 {
+header .weather-report .weather {
   font-size: 45px;
   font-weight: 600;
+  letter-spacing: 3px;
 }
 
 header .weather-report p {
-  font-size: 20px;
+  font-size: 12px;
   font-weight: 200;
   letter-spacing: 1px;
 }
@@ -558,9 +559,9 @@ section.allElems .allFeatures {
 
 /* Daily Goals Start Here  */
 
-.dailyGoals-fullpage {
+/* .dailyGoals-fullpage {
   display: block;
-}
+} */
 
 .dailyGoals-fullpage h1 {
   font-size: 50px;

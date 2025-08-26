@@ -232,3 +232,30 @@ function pomodoroClock() {
 
 pomodoroClock();
 
+async function weatherApiCall() {
+  const apiKey = "YOUR API KEY";
+  var city = "Mumbai";
+  try {
+    let response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+    );
+
+    let data = await response.json();
+    console.log(data);
+
+    // Set the Location and Country
+    document.querySelector(".location").innerText =
+      data.location.name + " " + data.location.country;
+
+    // Set the Weather Condition
+    document.querySelector(".weather").innerText = data.current.condition.text;
+
+    // Set the temperature and perciptio humidity
+    document.querySelector(  ".temperature").innerText = `${data.current.temp_c}° C`;
+    document.querySelector(".perciption").innerText = `Perciption :  ${data.current.precip_in}`;
+    document.querySelector(  ".humidity").innerText = `Humidity: ${data.current.humidity}`;
+  } catch (err) {
+    console.log("Error : ", err);
+  }
+}
+// weatherApiCall();

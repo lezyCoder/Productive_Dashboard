@@ -155,85 +155,122 @@ function pomodoroClock() {
   const shortBreakBtn = document.getElementById("shortBreak");
   const longBreakBtn = document.getElementById("longBreak");
   const pomodoroBtn = document.getElementById("pomodoro");
+
   let timer = null;
   let minutes = 0;
   let seconds = 0;
+  let isPaused = false;
 
-  // ✅ Update display helper
   function updateClock(minute, second) {
     const m = minute.toString().padStart(2, "0");
     const s = second.toString().padStart(2, "0");
     clock.innerHTML = `${m}:${s}`;
   }
 
-  // ✅ Short break (5 min)
-  function shortBreak() {
+  function stopTimer() {
     clearInterval(timer);
     timer = null;
+  }
+
+  // ✅ Reset all buttons before highlighting the selected one
+  function setActive(button) {
+    [shortBreakBtn, longBreakBtn, pomodoroBtn].forEach((btn) => {
+      btn.style.backgroundColor = "";
+      btn.style.color = "";
+    });
+
+    button.style.backgroundColor = `var(--tri2)`;
+    button.style.color = `var(--sec)`;
+  }
+
+  function shortBreak() {
+    stopTimer();
     minutes = 5;
     seconds = 0;
+    isPaused = false;
+    startBtn.innerHTML = "Start";
+    setActive(shortBreakBtn); // ✅ highlight selected
     updateClock(minutes, seconds);
   }
 
-  // ✅ Long break (15 min)
   function longBreak() {
-    clearInterval(timer);
-    timer = null;
+    stopTimer();
     minutes = 15;
     seconds = 0;
+    isPaused = false;
+    startBtn.innerHTML = "Start";
+    setActive(longBreakBtn);
     updateClock(minutes, seconds);
   }
 
   function pomodoro() {
-    clearInterval(timer);
-    timer = null;
+    stopTimer();
     minutes = 25;
     seconds = 0;
+    isPaused = false;
+    startBtn.innerHTML = "Start";
+    setActive(pomodoroBtn);
     updateClock(minutes, seconds);
   }
-  // Attach to buttons
-  shortBreakBtn.addEventListener("click", shortBreak);
-  longBreakBtn.addEventListener("click", longBreak);
-  pomodoroBtn.addEventListener("click", pomodoro);
-  // ✅ Start countdown
-  startBtn.addEventListener("click", () => {
-    if (timer) return; // prevent multiple intervals
 
+  function startTimer() {
     timer = setInterval(() => {
       if (minutes === 0 && seconds === 0) {
-        clearInterval(timer);
-        timer = null;
+        stopTimer();
+        startBtn.innerHTML = "Start";
         return;
       }
-
       if (seconds === 0) {
         seconds = 59;
         minutes--;
       } else {
         seconds--;
       }
-
       updateClock(minutes, seconds);
     }, 1000);
+  }
+
+  startBtn.addEventListener("click", () => {
+    if (minutes === 0 && seconds === 0 && !isPaused) return;
+
+    if (timer) {
+      stopTimer();
+      isPaused = true;
+      startBtn.innerHTML = "Resume";
+    } else {
+      startTimer();
+      isPaused = false;
+      startBtn.innerHTML = "Pause";
+    }
   });
 
-  // ✅ Reset
   resetBtn.addEventListener("click", () => {
-    clearInterval(timer);
-    timer = null;
+    stopTimer();
     minutes = 0;
     seconds = 0;
+    isPaused = false;
+    startBtn.innerHTML = "Start";
     updateClock(minutes, seconds);
+    // Optionally remove highlight when reset
+    [shortBreakBtn, longBreakBtn, pomodoroBtn].forEach((btn) => {
+      btn.style.backgroundColor = "";
+      btn.style.color = "";
+    });
   });
 
-  // Initialize display
+  shortBreakBtn.addEventListener("click", shortBreak);
+  longBreakBtn.addEventListener("click", longBreak);
+  pomodoroBtn.addEventListener("click", pomodoro);
+
   updateClock(minutes, seconds);
 }
 
+
 pomodoroClock();
 
+// Weather api
 async function weatherApiCall() {
-  const apiKey = "YOUR API KEY";
+  const apiKey = "Your Api key ";
   var city = "Mumbai";
   try {
     let response = await fetch(
@@ -251,11 +288,22 @@ async function weatherApiCall() {
     document.querySelector(".weather").innerText = data.current.condition.text;
 
     // Set the temperature and perciptio humidity
-    document.querySelector(  ".temperature").innerText = `${data.current.temp_c}° C`;
-    document.querySelector(".perciption").innerText = `Perciption :  ${data.current.precip_in}`;
-    document.querySelector(  ".humidity").innerText = `Humidity: ${data.current.humidity}`;
+    document.querySelector(
+      ".temperature"
+    ).innerText = `${data.current.temp_c}° C`;
+    document.querySelector(
+      ".perciption"
+    ).innerText = `Perciption :  ${data.current.precip_in}`;
+    document.querySelector(
+      ".humidity"
+    ).innerText = `Humidity: ${data.current.humidity}`;
+    document.querySelector(".time").innerText = data.location.localtime;
+    document.querySelector(
+      ".wind"
+    ).innerText = `Wind: ${data.current.wind_kph} kph`;
   } catch (err) {
     console.log("Error : ", err);
   }
 }
-// weatherApiCall();
+// Call once on page load
+weatherApiCall();

@@ -81,11 +81,32 @@ section.allElems {
   border-radius: 20px;
   width: 100%;
   background-color: var(--sec);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: url("https://cdn.pixabay.com/photo/2018/08/24/18/57/sun-3628613_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 header .weather-report {
   padding: 35px;
   color: var(--tri2);
+}
+
+header .localTime-location {
+  padding: 35px;
+  color: var(--tri2);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+header .localTime-location p {
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 header .weather-report .weather {
   font-size: 45px;
@@ -97,6 +118,32 @@ header .weather-report p {
   font-size: 12px;
   font-weight: 200;
   letter-spacing: 1px;
+}
+
+.theme {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  width: 100%;
+  background-color: var(--sec);
+  height: 70px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.theme button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: var(--tri2);
+  margin: 15px;
+}
+
+.theme button:hover {
+  scale: 0.97;
+  cursor: pointer;
 }
 
 section.allElems .allFeatures {

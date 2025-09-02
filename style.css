@@ -139,7 +139,7 @@ header .weather-report p {
   background-color: var(--tri2);
   margin: 15px;
   font-size: 18px;
-   font-weight: 400;
+  font-weight: 400;
 }
 
 .theme button:hover {
@@ -151,7 +151,7 @@ header .weather-report p {
   font-size: 22px;
   font-weight: 600;
   color: var(--tri2);
-  padding:20px;
+  padding: 20px;
   letter-spacing: 2px;
 }
 

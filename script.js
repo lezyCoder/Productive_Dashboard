@@ -265,7 +265,6 @@ function pomodoroClock() {
   updateClock(minutes, seconds);
 }
 
-
 pomodoroClock();
 
 // Weather api
@@ -307,3 +306,6 @@ async function weatherApiCall() {
 }
 // Call once on page load
 weatherApiCall();
+
+// Change theme
+

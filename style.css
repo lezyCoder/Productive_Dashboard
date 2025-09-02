@@ -45,7 +45,6 @@ body {
 }
 
 .main {
-  background-color: rgb(238, 238, 50);
   width: 100%;
   height: 100%;
   font-family: "Livingston Demo Serif";
@@ -128,8 +127,8 @@ header .weather-report p {
   background-color: var(--sec);
   height: 70px;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .theme button {
@@ -139,11 +138,21 @@ header .weather-report p {
   outline: none;
   background-color: var(--tri2);
   margin: 15px;
+  font-size: 18px;
+   font-weight: 400;
 }
 
 .theme button:hover {
   scale: 0.97;
   cursor: pointer;
+}
+
+.theme p {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--tri2);
+  padding:20px;
+  letter-spacing: 2px;
 }
 
 section.allElems .allFeatures {

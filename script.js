@@ -309,3 +309,25 @@ weatherApiCall();
 
 // Change theme
 
+function themeChanger() {
+  const rootElement = document.documentElement;
+  const theme = document.querySelector(".theme ");
+
+  const isDark = false;
+
+  theme.addEventListener("click", () => {
+    // --sec: #2c3639;
+    // --pri: #3f4e4f;
+    // --tri1: #a27b5c;
+    // --tri2: #dcd7c9;
+    // For Dark theme
+    if (!isDark) {
+      rootElement.style.setProperty("--pri", "#183D3D");
+      rootElement.style.setProperty("--tri2", "#A27B5C");
+      rootElement.style.setProperty("--tri1", "#210F37");
+      rootElement.style.setProperty("--sec", "#1E3E62");
+    }
+  });
+}
+
+themeChanger();

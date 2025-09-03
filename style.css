@@ -218,7 +218,7 @@ section.allElems .allFeatures {
   font-weight: 600;
   border: none;
   font-family: "Livingston Demo Sans", Arial, Helvetica, sans-serif;
-  color: var(--tri2);
+  color: var(--sec);
   letter-spacing: 1px;
   cursor: pointer;
 }

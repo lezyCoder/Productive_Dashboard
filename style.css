@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
   --sec: #2c3639;
   --pri: #3f4e4f;
@@ -32,7 +39,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-decoration: none;
   font-family: "Livingston Demo Sans", Arial, Helvetica, sans-serif;
 }
@@ -80,9 +88,15 @@ section.allElems {
   border-radius: 20px;
   width: 100%;
   background-color: var(--sec);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-image: url("https://cdn.pixabay.com/photo/2018/08/24/18/57/sun-3628613_1280.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,9 +112,16 @@ header .localTime-location {
   padding: 35px;
   color: var(--tri2);
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 header .localTime-location p {
@@ -126,9 +147,15 @@ header .weather-report p {
   width: 100%;
   background-color: var(--sec);
   height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .theme button {
@@ -156,9 +183,14 @@ header .weather-report p {
 }
 
 section.allElems .allFeatures {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   color: var(--sec);
   gap: 20px;
 }
@@ -171,19 +203,24 @@ section.allElems .allFeatures {
   font-size: 1rem;
   overflow: hidden;
   position: relative;
+  -webkit-transition: scale 200ms ease-in-out;
+  -o-transition: scale 200ms ease-in-out;
   transition: scale 200ms ease-in-out;
   cursor: pointer;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .elem:hover {
-  box-shadow: 0 5px 20px var(--tri2);
+  -webkit-box-shadow: 0 5px 20px var(--tri2);
+          box-shadow: 0 5px 20px var(--tri2);
 }
 
 .elem img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .elem h2 {
@@ -242,9 +279,15 @@ section.allElems .allFeatures {
   width: 100%;
   margin-top: 30px;
   /* background-color: var(--sec); */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .todo-list-fullpage .todo-container .addTask {
@@ -262,9 +305,16 @@ section.allElems .allFeatures {
 }
 
 .todo-list-fullpage .todo-container .addTask form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 20px;
 }
 
@@ -306,6 +356,8 @@ section.allElems .allFeatures {
   border: none;
   font-weight: 700;
   margin-bottom: 20px;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
   font-family: "Livingston Demo Sans", Arial, Helvetica, sans-serif;
 }
@@ -319,17 +371,30 @@ section.allElems .allFeatures {
   height: 100%;
   border-radius: 10px;
   background-color: var(--tri2);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 20px;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: auto;
 }
 
 .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   background-color: var(--pri);
   padding: 20px 40px;
@@ -340,8 +405,12 @@ section.allElems .allFeatures {
 .task h5 {
   color: var(--tri2);
   font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 15px;
 }
 
@@ -376,9 +445,15 @@ section.allElems .allFeatures {
 }
 
 .mark-imp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 10px 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -386,7 +461,9 @@ section.allElems .allFeatures {
 }
 
 .mark-imp input[type="checkbox"] {
-  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
   cursor: pointer;
 }
 
@@ -412,17 +489,28 @@ section.allElems .allFeatures {
   border-radius: 10px;
   background-color: var(--pri);
   padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .daily-planner-fullpage .day-planner .day-planner-time {
   background-color: var(--tri2);
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 10px;
   position: relative;
   width: 49%;
@@ -468,9 +556,15 @@ section.allElems .allFeatures {
 .motivation-fullpage-container {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .motivational-fullpage .motivation-container {
@@ -497,7 +591,8 @@ section.allElems .allFeatures {
   background-color: var(--tri2);
   position: absolute;
   z-index: 8;
-  filter: blur(40px);
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
   border-radius: 50px;
 }
 
@@ -519,10 +614,18 @@ section.allElems .allFeatures {
   color: var(--tri1);
   font-weight: 600;
   letter-spacing: 2px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .motivation-1 h2 {
@@ -546,12 +649,20 @@ section.allElems .allFeatures {
 .motivation-3 {
   padding: 10px;
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .motivation-3 h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 22px;
   font-weight: 600;
@@ -571,15 +682,28 @@ section.allElems .allFeatures {
 .pomodoro-clock-wrapper {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .pomodoro-clock-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 20px;
 }
 
@@ -614,10 +738,6 @@ section.allElems .allFeatures {
 }
 
 /* Daily Goals Start Here  */
-
-/* .dailyGoals-fullpage {
-  display: block;
-} */
 
 .dailyGoals-fullpage h1 {
   font-size: 50px;

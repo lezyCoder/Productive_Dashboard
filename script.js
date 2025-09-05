@@ -324,7 +324,7 @@ function themeChanger() {
     if (!isDark) {
       rootElement.style.setProperty("--pri", "#183D3D");
       rootElement.style.setProperty("--tri2", "#A27B5C");
-      rootElement.style.setProperty("--tri1", "#210F37");
+      rootElement.style.setProperty("--tri1", "#18230F");
       rootElement.style.setProperty("--sec", "#1E3E62");
     }
     else{

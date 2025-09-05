@@ -40,7 +40,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   text-decoration: none;
   font-family: "Livingston Demo Sans", Arial, Helvetica, sans-serif;
 }
@@ -92,11 +92,11 @@ section.allElems {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   background-image: url("https://cdn.pixabay.com/photo/2018/08/24/18/57/sun-3628613_1280.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -116,12 +116,12 @@ header .localTime-location {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 header .localTime-location p {
@@ -151,11 +151,11 @@ header .weather-report p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .theme button {
@@ -187,10 +187,10 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   color: var(--sec);
   gap: 20px;
 }
@@ -208,19 +208,19 @@ section.allElems .allFeatures {
   transition: scale 200ms ease-in-out;
   cursor: pointer;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .elem:hover {
   -webkit-box-shadow: 0 5px 20px var(--tri2);
-          box-shadow: 0 5px 20px var(--tri2);
+  box-shadow: 0 5px 20px var(--tri2);
 }
 
 .elem img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .elem h2 {
@@ -272,6 +272,7 @@ section.allElems .allFeatures {
 
 .todo-list-fullpage h1 {
   font-size: 55px;
+  color: var(--tri2);
 }
 
 .todo-list-fullpage .todo-container {
@@ -283,11 +284,11 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .todo-list-fullpage .todo-container .addTask {
@@ -310,11 +311,11 @@ section.allElems .allFeatures {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 20px;
 }
 
@@ -348,7 +349,7 @@ section.allElems .allFeatures {
 .todo-container .addTask form button {
   padding: 10px 20px;
   font-size: 20px;
-  color: var(--sec);
+  color: var(--tri2);
   background-color: var(--tri1);
   width: 100%;
   border-radius: 5px;
@@ -375,13 +376,13 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   overflow: auto;
 }
 
@@ -390,11 +391,11 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 100%;
   background-color: var(--pri);
   padding: 20px 40px;
@@ -409,8 +410,8 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   gap: 15px;
 }
 
@@ -449,11 +450,11 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   padding: 10px 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -462,8 +463,8 @@ section.allElems .allFeatures {
 
 .mark-imp input[type="checkbox"] {
   -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
   cursor: pointer;
 }
 
@@ -478,7 +479,8 @@ section.allElems .allFeatures {
 } */
 
 .daily-planner-fullpage h1 {
-  font-size: 60px;
+  font-size: 55px;
+  color: var(--tri2);
 }
 
 .daily-planner-fullpage .day-planner {
@@ -493,13 +495,13 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .daily-planner-fullpage .day-planner .day-planner-time {
@@ -509,8 +511,8 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 10px;
   position: relative;
   width: 49%;
@@ -549,8 +551,8 @@ section.allElems .allFeatures {
 }
 
 .motivational-fullpage h1 {
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 55px;
+  color: var(--tri2);
 }
 
 .motivation-fullpage-container {
@@ -560,11 +562,11 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .motivational-fullpage .motivation-container {
@@ -592,7 +594,7 @@ section.allElems .allFeatures {
   position: absolute;
   z-index: 8;
   -webkit-filter: blur(40px);
-          filter: blur(40px);
+  filter: blur(40px);
   border-radius: 50px;
 }
 
@@ -621,11 +623,11 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .motivation-1 h2 {
@@ -653,11 +655,11 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .motivation-3 h2 {
@@ -676,7 +678,8 @@ section.allElems .allFeatures {
 }
 
 .pomodoro-fullpage h1 {
-  font-size: 50px;
+    font-size: 55px;
+  color: var(--tri2);
 }
 
 .pomodoro-clock-wrapper {
@@ -686,11 +689,11 @@ section.allElems .allFeatures {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .pomodoro-clock-container {
@@ -699,11 +702,11 @@ section.allElems .allFeatures {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 20px;
 }
 
@@ -740,6 +743,6 @@ section.allElems .allFeatures {
 /* Daily Goals Start Here  */
 
 .dailyGoals-fullpage h1 {
-  font-size: 50px;
-  font-weight: 600;
+    font-size: 55px;
+  color: var(--tri2);
 }

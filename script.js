@@ -327,6 +327,9 @@ function themeChanger() {
       rootElement.style.setProperty("--tri1", "#210F37");
       rootElement.style.setProperty("--sec", "#1E3E62");
     }
+    else{
+      return;
+    }
   });
 }
 
